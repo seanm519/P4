@@ -65,23 +65,26 @@ $(function () {
      * current player.
      */
     set = function () {
-        
+    
         if ($(this).html() !== EMPTY) {
             return;
         }
         $(this).html(turn);
-        console.log($(this));
         moves += 1;
         score[turn] += $(this)[0].indicator;
-        console.log(score[turn]);
+        
         if (win(score[turn])) {
-            alert(turn + " wins!");
+            // Replace alert with update to .gameStatus div
+            $(".gameStatus").html(turn + " wins!").addClass("winner-announcement");
             startNewGame();
         } else if (moves === SIZE * SIZE) {
-            alert("Cat\u2019s game!");
+            // Replace alert with update to .gameStatus div
+            $(".gameStatus").html("Cat’s game!").addClass("tie-announcement");
             startNewGame();
         } else {
             turn = turn === "X" ? "O" : "X";
+            // Optional: Update the game status for whose turn it is
+            $(".gameStatus").html("Player " + turn + "'s turn");
         }
     },
 
