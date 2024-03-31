@@ -10,12 +10,15 @@
 <body>
     
     
-    
+    <!--creates a verticaly and horrizontally centered frame for hte tic tac toe board and other elements-->
     <div class="row justify-content-center align-items-center h-100">
         <div class="col-12 col-md-8 text-center">
+            <!--header for the tic tac toe board-->
             <div class="ticTacToeHeader mb-5">Tic - Tac - Toe</div>
             <div class="d-flex justify-content-center">
+                <!--div for the board-->
                 <div id="tictactoe" class="d-inline-block"></div>
+                <!--div for the score table with its elements-->
                 <div id="scoreTable" class="ml-4">
                     <h4>Score Board</h4>
                     <p id="xWins">X Wins: 0</p>
@@ -23,6 +26,7 @@
                     <p id="ties">Ties: 0</p>
                 </div>
             </div>
+            <!--div for the game status, displayes whose turn it is and who wins or if there is a tie-->
             <div class="gameStatus"></div>
         </div>
     </div>

@@ -93,6 +93,11 @@ $(function () {
         }
     },
 
+    /*
+    * updates the score display on the html
+    *
+    * 
+    * */
     updateScoreDisplay = function () {
         $("#xWins").text("X Wins: " + gameScores.X);
         $("#oWins").text("O Wins: " + gameScores.O);
