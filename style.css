@@ -28,3 +28,12 @@
     color: orange;
     font-weight: bold;
 }
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    min-height: 100%; /* Ensure at least full viewport height */
+}
