@@ -1,4 +1,4 @@
-
+//added by sean murphy
 var gameScores = { X: 0, O: 0, Ties: 0 };
 
 /*
@@ -68,6 +68,7 @@ $(function () {
      * then checks for a win or cats game.  Also changes the
      * current player.
      */
+    //updated by Sean Murphy
     set = function () {
     
         if ($(this).html() !== EMPTY) {
@@ -96,7 +97,7 @@ $(function () {
     /*
     * updates the score display on the html
     *
-    * 
+    * added by sean murphy
     * */
     updateScoreDisplay = function () {
         $("#xWins").text("X Wins: " + gameScores.X);
@@ -130,6 +131,7 @@ $(function () {
     };
 
     play();
+    //added by sean murphy
     updateScoreDisplay();
 });
 
