@@ -17,5 +17,14 @@
 .ticTacToeHeader{
     text-align: center;
     font-size:xx-large;
-    background-color: blue;
+    background-color: clear;
+}
+.winner-announcement {
+    color: green;
+    font-weight: bold;
+}
+
+.tie-announcement {
+    color: orange;
+    font-weight: bold;
 }

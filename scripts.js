@@ -45,6 +45,7 @@ $(function () {
         score = {"X": 0, "O": 0};
         moves = 0;
         squares.forEach(function (square) {square.html(EMPTY);});
+        $(".gameStatus").html("Game started, X's turn").removeClass("winner-announcement tie-announcement");
     },
 
     /*
@@ -76,11 +77,11 @@ $(function () {
         if (win(score[turn])) {
             // Replace alert with update to .gameStatus div
             $(".gameStatus").html(turn + " wins!").addClass("winner-announcement");
-            startNewGame();
+            setTimeout(startNewGame, 5000); // Wait 5 seconds before starting a new game
         } else if (moves === SIZE * SIZE) {
             // Replace alert with update to .gameStatus div
             $(".gameStatus").html("Cat’s game!").addClass("tie-announcement");
-            startNewGame();
+            setTimeout(startNewGame, 5000); // Wait 5 seconds before starting a new game
         } else {
             turn = turn === "X" ? "O" : "X";
             // Optional: Update the game status for whose turn it is
