@@ -1,3 +1,6 @@
+
+var gameScores = { X: 0, O: 0, Ties: 0 };
+
 /*
  * A complete tic-tac-toe widget, using JQuery.  Just include this 
  * script in a browser page and play.  A tic-tac-toe game will be 
@@ -75,18 +78,25 @@ $(function () {
         score[turn] += $(this)[0].indicator;
         
         if (win(score[turn])) {
-            // Replace alert with update to .gameStatus div
             $(".gameStatus").html(turn + " wins!").addClass("winner-announcement");
-            setTimeout(startNewGame, 5000); // Wait 5 seconds before starting a new game
+            gameScores[turn]++; // Update the score for X or O
+            updateScoreDisplay(); // Update the score display
+            setTimeout(startNewGame, 5000);
         } else if (moves === SIZE * SIZE) {
-            // Replace alert with update to .gameStatus div
             $(".gameStatus").html("Cat’s game!").addClass("tie-announcement");
-            setTimeout(startNewGame, 5000); // Wait 5 seconds before starting a new game
+            gameScores.Ties++; // Update the tie score
+            updateScoreDisplay(); // Update the score display
+            setTimeout(startNewGame, 5000);
         } else {
             turn = turn === "X" ? "O" : "X";
-            // Optional: Update the game status for whose turn it is
             $(".gameStatus").html("Player " + turn + "'s turn");
         }
+    },
+
+    updateScoreDisplay = function () {
+        $("#xWins").text("X Wins: " + gameScores.X);
+        $("#oWins").text("O Wins: " + gameScores.O);
+        $("#ties").text("Ties: " + gameScores.Ties);
     },
 
     /*
@@ -115,5 +125,6 @@ $(function () {
     };
 
     play();
+    updateScoreDisplay();
 });
 
