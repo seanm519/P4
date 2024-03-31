@@ -1,0 +1,21 @@
+/* Custom CSS for Tic Tac Toe Board */
+.grid-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.tic-tac-toe-cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+.ticTacToeHeader{
+    text-align: center;
+    font-size:xx-large;
+    background-color: blue;
+}
